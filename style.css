@@ -16,6 +16,7 @@ body{
     background-color: #050816;
 }
 
+
 .container{
     width: 100%;
     max-width: 1180px;
@@ -35,6 +36,13 @@ body{
     gap: 30px;
 }
 
+@media (max-width: 700px){
+    .inner-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 .logo{
     color: white;
     font-size: 24px;
@@ -47,6 +55,12 @@ body{
 .nav{
     display: flex;
     gap:24px;
+}
+
+@media (max-width: 700px){
+    .nav{
+       flex-wrap: wrap;
+    }
 }
 
 .nav a{
@@ -66,9 +80,21 @@ body{
 }
 .hero-grid{
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 80px;
+}
+
+/* @media(max-width: 800px){
+    .hero-grid{
+        grid-template-columns: 1fr;
+    }
+} */
+
+@media(min-width:1000px){
+    .hero-grid{
+        grid-template-columns: 1.5fr 1fr;
+    }
 }
 
 .hero-content{
@@ -93,6 +119,18 @@ body{
     color: white;
 }
 
+@media(max-width:800px){
+    .hero h1{
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 500px){
+    .hero h1{
+        font-size: 26px;
+    }
+}
+
 .hero-text{
     max-width: 650px;
     margin-bottom: 32px;
@@ -100,7 +138,8 @@ body{
     font-size: 20px;
 }
 
-.hero-button{
+.hero-button,
+.launch-button{
     display: inline-block;
     padding: 14px 24px;
     color: #04111d;
@@ -131,6 +170,13 @@ body{
     height: 360px;
     border: 1px solid #334155;
     border-radius: 50%;
+}
+
+@media (max-width: 700px){
+    .orbit{
+        width: 260px;
+        height: 260px;
+    }
 }
 
 .planet{
@@ -189,7 +235,8 @@ body{
     background-color: #0b1020;
 }
 .about h2, 
-.missions h2{
+.missions h2,
+.launch-box h2{
     margin: 0 0 18px;
     color: white;
     font-size: 40px;
@@ -210,6 +257,12 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+}
+
+@media (max-width:800px){
+    .stats-grid{
+        grid-template-columns: 1fr;
+    }
 }
 
 .stat-card{
@@ -254,6 +307,12 @@ body{
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 38px;
+}
+
+@media (max-width: 800px){
+    .mission-grid{
+        grid-template-columns: 1fr;
+    }
 }
 
 .mission-card{
@@ -309,6 +368,59 @@ body{
 .mission-card p{
     margin: 0;
     color:#94a3b8;
+}
+
+.launch-section{
+    padding: 90px 0;
+}
+
+.launch-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    border-top: 1px solid #1f2937;
+    border-bottom: 1px solid #1f2937;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media (max-width: 700px){
+    .launch-box{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+.launch-button{
+    animation: pulse 2s ease-in-out infinite;
+}
+
+
+.site-footer{
+    padding: 28px 0;
+    background-color:#0b1020;
+}
+
+.footer-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+@keyframes pulse {
+    0%,
+    100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
 }
 
 @keyframes blink {
